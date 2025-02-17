@@ -1,0 +1,143 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/*
+    Created on : Nov 15, 2021, 3:00:30 PM
+    Author     : linux
+*/
+
+.button {
+    -fx-font-size: 17 px;
+    -fx-font-family : "Ubuntu";
+    /*-fx-padding: 10;*/
+    -fx-background-color: #FFFFFF;
+    -fx-border-color : #9e9b9b;
+    -fx-border-radius : 5px;
+}
+
+#to {
+    -fx-border-width: 0;
+    -fx-background-color: transparent;
+}
+
+#to:hover {
+    -fx-border-width: 1;
+    -fx-background-color: #FFFFFF;
+}
+
+#egale {
+    -fx-background-color : #368b1b;
+    -fx-text-fill : #ffffff;
+}
+
+.toggle-button {
+    -fx-font-size : 17 px "Ubuntu";
+    /*-fx-padding: 10;*/
+    -fx-background-color : #FFFFFF;
+    -fx-border-color : #9e9b9b;
+    -fx-border-radius : 5px;
+}
+
+#sup:selected{
+    -fx-background-color : #b5c6b0;
+}
+
+#sub:selected{
+    -fx-background-color : transparent;
+}
+
+#unite1, #unite2 {
+    -fx-font-size: 17 px;
+    -fx-font-family : "Ubuntu";
+    /*-fx-pref-width: 220;*/
+    /*-fx-padding: 10;*/
+    /*-fx-background-color: #FFFFFF;*/
+    -fx-border-color : #9e9b9b;
+    -fx-border-radius : 5px;
+    /*-fx-border-width : 0 0 0 1;*/
+}
+
+#resultatInput {
+    -fx-background-color: #ffffff;
+    /*-fx-background-insets: 0 -1 -1 -1, 0 0 0 0;*/
+}
+
+#resultatInput:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1;
+}
+
+#exceptionInput {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0;
+    -fx-text-fill: red;
+}
+
+#exceptionInput:focused {
+    -fx-background-color: #a9a9a9 , white , white;
+    -fx-background-insets: 0 -1 -1 -1, 0 0 0 0;
+}
+
+
+/*#resultatInput:focused {
+    -fx-border-width: 0;
+    -fx-font-size: 20 px;
+    -fx-background-insets: -2;
+    -fx-padding: 0;
+
+}
+
+#exceptionInput {
+    -fx-border-width: 3 3 3 3;
+    -fx-background-insets: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}*/
+
+.context-menu {
+    -fx-background-color:
+        linear-gradient(to bottom,
+        derive(-fx-color,-17%),
+        derive(-fx-color,-30%)
+        ),
+        -fx-control-inner-background;
+    -fx-background-insets: 0, 1;
+    -fx-padding: 0.333333em 0.083333em 0.333333em 0.083333em; /* 4 1 8 1 */
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.2) , 12, 0.0 , 0 , 8 );
+}
+.context-menu .separator:horizontal .line {
+    -fx-border-color: -fx-box-border transparent transparent transparent;
+    -fx-border-insets: 1 0 0 0;
+}
+.context-menu > .scroll-arrow {
+    /*-fx-padding: 0.416667em 0.416667em 0.416667em 0.416667em;  5 */
+    -fx-padding: 0 5 0 80;
+    -fx-background-color: transparent;
+}
+.context-menu > .scroll-arrow:hover {
+    -fx-background: -fx-selection-bar;
+    -fx-background-color: #000000;
+    -fx-text-fill: -fx-text-background-color;
+}
+/*
+.menu {
+    -fx-background-color: transparent;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em;  4 8 4 8
+}*/
+.menu > .right-container > .arrow {
+    -fx-padding: 0 0 0 0; /* 4.5 2 4.5 2 */
+    -fx-background-color: -fx-mark-color;
+    -fx-shape: "M0,-4L4,0L0,4Z";
+    -fx-scale-shape: false;
+    -fx-alignment: CENTER_RIGHT;
+
+}
+
+.menu > .right-container   {
+    -fx-padding: 0 0 0 140; /* 4.5 2 4.5 2 */
+
+    /*-fx-alignment: CENTER_RIGHT;*/
+
+}
+

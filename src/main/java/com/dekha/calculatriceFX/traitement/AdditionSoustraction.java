@@ -15,13 +15,11 @@ import java.util.regex.Pattern;
 public class AdditionSoustraction {
 
     public static String additionneSoustraire(String str) {
-
-        double resultat = 0d;
         double res = 0d;
         int p1;
         int p2;
 
-        String regExp = "((\\+|-)?\\d+(\\.\\d+)?([E]\\d+)?) *(-|\\+) *((\\+|-)?\\d+(\\.\\d+)?(E\\d+)?)";
+        String regExp = "(([+\\-])?\\d+(\\.\\d+)?([E]\\d+)?) *([-+]) *(([+\\-])?\\d+(\\.\\d+)?(E\\d+)?)";
 
 //        String regExp = "(-?\\d+(\\.\\d+)?(E\\d+)?) *(-|\\+) *(-?\\d+(\\.\\d+)?(E\\d+)?)";
         Pattern pattern = Pattern.compile(regExp);
@@ -34,7 +32,7 @@ public class AdditionSoustraction {
             matcher.reset();
         }
 
-        while (!str.isBlank() && !str.isEmpty() && matcher.find()) {
+        while (!str.isBlank() && matcher.find()) {
             String op1 = matcher.group(1);
             System.out.println(op1);
             String op = matcher.group(5);
@@ -45,8 +43,8 @@ public class AdditionSoustraction {
             p1 = matcher.start();
             p2 = matcher.end();
 
-            double d1 = Double.valueOf(op1);
-            double d2 = Double.valueOf(op2);
+            double d1 = Double.parseDouble(op1);
+            double d2 = Double.parseDouble(op2);
 
             if (op.equals("+")) {
                 res = d1 + d2;
@@ -57,7 +55,7 @@ public class AdditionSoustraction {
 
 //            resultat += res;
             String s = String.format("%+9f", res);
-            str = str.substring(0, p1) + s + str.substring(p2, str.length());
+            str = str.substring(0, p1) + s + str.substring(p2);
             System.out.println(str);
             matcher = pattern.matcher(str);
 

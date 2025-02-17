@@ -5,7 +5,7 @@
 package com.dekha.calculatriceFX.layout;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers in Project Properties .
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -69,8 +69,6 @@ public class Ligne5 extends HBox {
             ControleurAffichage.traite(str);
 
         });
-
         return button;
     }
-
 }

@@ -5,7 +5,9 @@
 package com.dekha.calculatriceFX.layout;
 
 import com.dekha.calculatriceFX.controleur.ControleurAffichage;
+
 import java.util.function.UnaryOperator;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -20,7 +22,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Font;
 
 /**
- *
  * @author linux
  */
 public class ResultatAfficheur extends TextField {
@@ -40,32 +41,26 @@ public class ResultatAfficheur extends TextField {
                 oldCaretPosition = t.getControlAnchor();
 
                 switch (t.getText()) {
-
                     case "*":
                         t.setText("×");
 //                        t.setText("\u00D7");
                         break;
-
                     case "-":
                         t.setText("−");
 //                        t.setText("\u2212");
                         break;
-
                     case "/":
                         t.setText("÷");
 //                        t.setText("\u00f7");
                         break;
-
                     case "=":
                         ControleurAffichage.traite("=");
                         t.setText("");
                         break;
-
-            }
+                }
                 return t;
-        }}));
-
-
+            }
+        }));
 
 //        focusedProperty().addListener(new ChangeListener<Boolean>() {
 //            @Override
@@ -84,15 +79,6 @@ public class ResultatAfficheur extends TextField {
         return ResultatAfficheurHolder.INSTANCE;
     }
 
-    private static class ResultatAfficheurHolder {
-
-        private static final ResultatAfficheur INSTANCE = new ResultatAfficheur();
-
-        public ResultatAfficheurHolder() {
-//            INSTANCE.setId("inp");
-        }
-    }
-
     public static void affiche(String str) {
         if (!ResultatAfficheurHolder.INSTANCE.isFocused()) {
 
@@ -103,7 +89,6 @@ public class ResultatAfficheur extends TextField {
             int old = ResultatAfficheurHolder.INSTANCE.getAnchor();
             ResultatAfficheurHolder.INSTANCE.requestFocus();
             ResultatAfficheurHolder.INSTANCE.positionCaret(old);
-
         }
         oldCaretPosition = ResultatAfficheurHolder.INSTANCE.getAnchor();
 //        caretPosition = ResultatAfficheurHolder.INSTANCE.getCaretPosition();
@@ -125,4 +110,12 @@ public class ResultatAfficheur extends TextField {
         ResultatAfficheurHolder.INSTANCE.redo();
     }
 
+    private static class ResultatAfficheurHolder {
+
+        private static final ResultatAfficheur INSTANCE = new ResultatAfficheur();
+
+        public ResultatAfficheurHolder() {
+//            INSTANCE.setId("inp");
+        }
+    }
 }

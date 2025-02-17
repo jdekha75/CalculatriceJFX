@@ -18,16 +18,11 @@ public class MultiplicationDivision {
     private static int p2 = 0;
 
     public static String multuplieDivise(String str) {
-
-        double resultat = 0d;
         double res = 0d;
         int p1;
         int p2;
 
-        String regExp = "((\\+|-)?\\d+(\\.\\d+)?([Ee]\\+?\\d+)?) *(/|\\*) *((\\+|-)?\\d+(\\.\\d+)?(E\\d+)?)";
-
-        String regExpOperateur = "(/|\\*)";
-
+        String regExp = "(([+\\-])?\\d+(\\.\\d+)?([Ee]\\+?\\d+)?) *([/*]) *(([+\\-])?\\d+(\\.\\d+)?(E\\d+)?)";
         String regExp2 = "(-?\\d+(\\.\\d+)?(E\\d+)?)";
 
         //String regExp = "(-?\\d+(\\.\\d+)?)(/|\\*)(-?\\d+(\\.\\d+)?)";
@@ -41,7 +36,7 @@ public class MultiplicationDivision {
             matcher.reset();
         }
 
-        while (!str.isBlank() && !str.isEmpty() && matcher.find()) {
+        while (!str.isBlank() && matcher.find()) {
             String op1 = matcher.group(1);
 
             String op = matcher.group(5);
@@ -62,7 +57,7 @@ public class MultiplicationDivision {
 
 //            resultat += res;
             String s = String.format("%+9f", res);
-            str = str.substring(0, p1) + s + str.substring(p2, str.length());
+            str = str.substring(0, p1) + s + str.substring(p2);
             matcher = pattern.matcher(str);
 
         }
@@ -72,7 +67,7 @@ public class MultiplicationDivision {
 
     public static String traiter(String str) {
 
-        while (!str.isBlank() && !str.isEmpty() && (str.contains("/") || str.contains("*"))) {
+        while (!str.isBlank() && (str.contains("/") || str.contains("*"))) {
             str = str.replace("--", "+");
             str = str.replace("-+", "-");
             str = str.replace("+-", "-");
